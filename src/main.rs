@@ -1,5 +1,5 @@
-use std::io;
 use std::cmp::Ordering;
+use std::io;
 
 fn main() {
     let mut input_number = String::new();
@@ -12,10 +12,10 @@ fn main() {
             let value: u32 = match (number as u32).cmp(&0) {
                 Ordering::Greater => number,
                 Ordering::Equal => 1,
-                Ordering::Less => 1
+                Ordering::Less => 1,
             };
             value
-        },
+        }
         Err(_) => {
             println!("Incorrect number");
             0
