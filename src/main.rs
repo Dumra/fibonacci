@@ -1,4 +1,3 @@
-use chrono::Local;
 use std::cmp::Ordering;
 use std::io;
 
@@ -20,8 +19,6 @@ fn main() {
         }
     };
 
-    let start = Local::now().timestamp();
-
     let last_loop = count_fibonacci - 1;
     for number in 0..count_fibonacci {
         if number == last_loop {
@@ -31,9 +28,6 @@ fn main() {
         }
     }
     print!("\n");
-
-    let end = Local::now().timestamp();
-    println!("{} seconds for whatever you did.", end - start);
 }
 
 fn calculate_fibonacci(number: u64) -> u64 {
