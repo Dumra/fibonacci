@@ -10,13 +10,10 @@ fn main() {
         .expect("Can't read from command line");
 
     let count_fibonacci: u64 = match input_number.trim().parse() {
-        Ok(number) => {
-            let value = match (number as u32).cmp(&0) {
-                Ordering::Greater => number,
-                Ordering::Equal | Ordering::Less => 1,
-            };
-            value
-        }
+        Ok(number) => match (number as u32).cmp(&0) {
+            Ordering::Greater => number,
+            Ordering::Equal | Ordering::Less => 1,
+        },
         Err(_) => {
             println!("Incorrect number");
             0
