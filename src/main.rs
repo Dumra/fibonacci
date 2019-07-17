@@ -31,8 +31,9 @@ fn main() {
 }
 
 fn calculate_fibonacci(number: u64) -> u64 {
-    match number {
-        0 | 1 => number,
-        number => calculate_fibonacci(number - 1) + calculate_fibonacci(number - 2),
+    if let 0 | 1 = number {
+        number
+    } else {
+        calculate_fibonacci(number - 1) + calculate_fibonacci(number - 2)
     }
 }
